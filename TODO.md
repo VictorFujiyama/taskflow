@@ -187,4 +187,4 @@ Acessa http://localhost:5173/ no navegador.
 
 ## Referência visual
 
-O arquivo `taskflow.html` na pasta pai (`USC/`) é a versão original em HTML puro — usar como referência de como cada componente deve ficar visualmente.
+O arquivo `taskflow.html` é a versão original em HTML puro — usar como referência de como cada componente deve ficar visualmente.
