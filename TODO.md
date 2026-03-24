@@ -27,7 +27,7 @@
 
 ---
 
-## TODO — Para os alunos implementarem
+## TODO — Para implementar
 
 ### 1. `components/Modal/TarefaForm.jsx`
 
@@ -163,15 +163,15 @@ Estilos:
 
 ---
 
-## Sugestão de divisão por aluno
+## Sugestão de divisão
 
-| Aluno   | O que fazer                        | Dificuldade  |
+| Pessoa   | O que fazer                        | Dificuldade  |
 | ------- | ---------------------------------- | ------------ |
-| Aluno 1 | `TarefaForm` + `UsuarioForm`       | Fácil        |
-| Aluno 2 | `FilterBar`                        | Média        |
-| Aluno 3 | `KanbanBoard`                      | Média        |
-| Aluno 4 | `UserCard` + `ProgressBar`         | Fácil-Média  |
-| Aluno 5 | Página `Relatorio` completa        | Média-Alta   |
+| Pessoa 1 | `TarefaForm` + `UsuarioForm`       | Fácil        |
+| Pessoa 2 | `FilterBar`                        | Média        |
+| Pessoa 3 | `KanbanBoard`                      | Média        |
+| Pessoa 4 | `UserCard` + `ProgressBar`         | Fácil-Média  |
+| Pessoa 5 | Página `Relatorio` completa        | Média-Alta   |
 
 ---
 
