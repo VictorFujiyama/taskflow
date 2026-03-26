@@ -58,13 +58,47 @@ export default function UsuarioForm({ isOpen, onClose, onSave, usuario }) {
   return (
     <Modal isOpen={isOpen} onClose={onClose} title={usuario ? 'Editar Usuário' : 'Novo Usuário'}>
       <div className="space-y-4">
-        {/* TODO: Implementar os campos do formulário aqui */}
-        {/* Use as variáveis de estado acima (nome, email, funcao) */}
-        {/* Use inputClass para estilizar os inputs */}
+        {/* Nome completo */}
+        <div>
+          <label className="block text-sm font-medium text-text mb-1">
+            Nome completo *
+          </label>
+          <input
+            type="text"
+            className={inputClass}
+            placeholder="Digite o nome completo"
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+          />
+        </div>
 
-        <p className="text-text-3 text-sm py-8 text-center">
-          Implementar campos: Nome completo, E-mail e Função/Cargo
-        </p>
+        {/* E-mail */}
+        <div>
+          <label className="block text-sm font-medium text-text mb-1">
+            E-mail *
+          </label>
+          <input
+            type="email"
+            className={inputClass}
+            placeholder="Digite o e-mail"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+
+        {/* Função / Cargo */}
+        <div>
+          <label className="block text-sm font-medium text-text mb-1">
+            Função / Cargo
+          </label>
+          <input
+            type="text"
+            className={inputClass}
+            placeholder="Ex: Administrador, Suporte..."
+            value={funcao}
+            onChange={(e) => setFuncao(e.target.value)}
+          />
+        </div>
       </div>
 
       {/* Botões — já funcionam, não precisa mexer */}
