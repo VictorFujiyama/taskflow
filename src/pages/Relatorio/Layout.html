@@ -1,0 +1,136 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório - TaskFlow</title>
+    <link rel="stylesheet" href="Layout.css">
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <h2>TaskFlow</h2>
+        <ul class="menu">
+            <li>Dashboard</li>
+            <li>Kanban</li>
+            <li>Tarefas</li>
+            <li>Usuários</li>
+            <li class="active">Relatório</li>
+        </ul>
+    </div>
+    <div class="main">
+        <h1>Relatório</h1>
+
+        <div class="grid">
+
+            <!-- Esquerda -->
+            <div>
+                <div class="card">
+                    <h3>Status das Tarefas</h3>
+
+                    <div class="status-box">
+                        <div class="status-item">
+                            <h2>2</h2>
+                            <p>Concluídas</p>
+                        </div>
+                        <div class="status-item">
+                            <h2>1</h2>
+                            <p>Em andamento</p>
+                        </div>
+                        <div class="status-item">
+                            <h2>3</h2>
+                            <p>A fazer</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="row"><span>Concluídas</span><span>33%</span></div>
+                        <div class="bar">
+                            <div class="fill green"></div>
+                        </div>
+
+                        <div class="row"><span>Em andamento</span><span>17%</span></div>
+                        <div class="bar">
+                            <div class="fill blue"></div>
+                        </div>
+
+                        <div class="row"><span>A fazer</span><span>50%</span></div>
+                        <div class="bar">
+                            <div class="fill gray"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="margin-top:20px;">
+                    <h3>Prioridades</h3>
+
+                    <div class="row"><span>Alta</span><span>3 tarefas</span></div>
+                    <div class="bar">
+                        <div class="fill red"></div>
+                    </div>
+
+                    <div class="row"><span>Média</span><span>2 tarefas</span></div>
+                    <div class="bar">
+                        <div class="fill orange"></div>
+                    </div>
+
+                    <div class="row"><span>Baixa</span><span>1 tarefa</span></div>
+                    <div class="bar">
+                        <div class="fill lightgreen"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Direita -->
+            <div>
+                <div class="card">
+                    <h3>Resumo</h3>
+                    <p>Total: 6 tarefas</p>
+                    <p>Taxa de conclusão: 33%</p>
+                    <p>Membros ativos: 3</p>
+                    <p>Tarefas atrasadas: 0</p>
+                </div>
+                <div class="card" style="margin-top:20px;">
+                    <h3>Por Usuário</h3>
+
+                    <div class="user">
+                        <div class="user-name">
+                            <span><span class="circle u1">J</span>João</span>
+                            <span>0%</span>
+                        </div>
+                        <div class="bar">
+                            <div class="fill gray" style="width:0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="user">
+                        <div class="user-name">
+                            <span><span class="circle u2">M</span>Vitor</span>
+                            <span>100%</span>
+                        </div>
+                        <div class="bar">
+                            <div class="fill orange" style="width:100%"></div>
+                        </div>
+                    </div>
+
+                    <div class="user">
+                        <div class="user-name">
+                            <span><span class="circle u3">C</span>Larissa</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="bar">
+                            <div class="fill green" style="width:50%"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
