@@ -1,5 +1,3 @@
-import { priorityStyle, statusStyle } from '../../data/helpers'
-
 const STYLES = {
   prioridade: {
     Alta: 'bg-red-light text-red',

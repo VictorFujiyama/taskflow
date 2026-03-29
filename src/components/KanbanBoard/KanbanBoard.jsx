@@ -2,7 +2,7 @@ import { iniciais, formatDate } from '../../data/helpers'
 import Badge from '../Badge/Badge'
 
 // ============================================================
-const KANBAN_COLUNAS = [
+const COLUNAS = [
   { status: 'A Fazer', cor: 'text-text-3' },
   { status: 'Em Andamento', cor: 'text-accent' },
   { status: 'Concluído', cor: 'text-green' },
@@ -43,7 +43,7 @@ export default function KanbanBoard({ tarefas, usuarios, onEdit }) {
               )}
 
               {tarefasFiltradas.map((tarefa) => {
-                const user = getUser(tarefa.responsavel)
+                const user = getUser(tarefa.responsavelId)
 
                 return (
                   <div
@@ -57,12 +57,12 @@ export default function KanbanBoard({ tarefas, usuarios, onEdit }) {
                       <h3 className="text-sm font-semibold">
                         {tarefa.titulo}
                       </h3>
-                      <Badge prioridade={tarefa.prioridade} />
+                      <Badge tipo="prioridade" valor={tarefa.prioridade} />
                     </div>
 
                     {/* DESCRIÇÃO */}
                     <p className="text-xs text-text-3 mb-3">
-                      {truncate(tarefa.descricao, 80)}
+                      {truncate(tarefa.desc, 80)}
                     </p>
 
                     {/* FOOTER */}
@@ -90,29 +90,6 @@ export default function KanbanBoard({ tarefas, usuarios, onEdit }) {
           </div>
         )
       })}
-    </div>
-  )
-}
-// ============================================================
-
-const COLUNAS = [
-  { status: 'A Fazer', cor: 'text-text-3' },
-  { status: 'Em Andamento', cor: 'text-accent' },
-  { status: 'Concluído', cor: 'text-green' },
-]
-
-export default function KanbanBoard({ tarefas, usuarios, onEdit }) {
-  const getUser = (id) => usuarios.find((u) => u.id === Number(id))
-
-  // TODO: Implementar
-  return (
-    <div className="grid grid-cols-3 gap-4">
-      {COLUNAS.map((col) => (
-        <div key={col.status} className="bg-surface-2 rounded-2xl p-4">
-          <p className={`text-sm font-semibold uppercase ${col.cor} mb-3`}>{col.status}</p>
-          <p className="text-text-3 text-xs">TODO: Cards aqui</p>
-        </div>
-      ))}
     </div>
   )
 }

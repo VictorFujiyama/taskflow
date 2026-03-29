@@ -61,18 +61,18 @@ export default function Relatorio({ tarefas, usuarios, getEstatisticas }) {
               </div>
               <div>
                 <p className="text-xs text-text-3">Em andamento</p>
-                <p className="text-lg font-bold">{stats.andamento}</p>
+                <p className="text-lg font-bold">{stats.emAndamento}</p>
               </div>
               <div>
                 <p className="text-xs text-text-3">A fazer</p>
-                <p className="text-lg font-bold">{stats.afazer}</p>
+                <p className="text-lg font-bold">{stats.aFazer}</p>
               </div>
             </div>
 
             <div className="space-y-2">
-              <ProgressBar label="Concluídas" value={pct(stats.concluidas)} />
-              <ProgressBar label="Em andamento" value={pct(stats.andamento)} />
-              <ProgressBar label="A fazer" value={pct(stats.afazer)} />
+              <ProgressBar label="Concluídas" valor={`${pct(stats.concluidas)}%`} porcentagem={pct(stats.concluidas)} cor="var(--color-green)" />
+              <ProgressBar label="Em andamento" valor={`${pct(stats.emAndamento)}%`} porcentagem={pct(stats.emAndamento)} cor="var(--color-accent)" />
+              <ProgressBar label="A fazer" valor={`${pct(stats.aFazer)}%`} porcentagem={pct(stats.aFazer)} />
             </div>
           </div>
 
@@ -82,16 +82,22 @@ export default function Relatorio({ tarefas, usuarios, getEstatisticas }) {
 
             <div className="space-y-2">
               <ProgressBar
-                label={<span className="px-2 py-0.5 rounded bg-red-100 text-red-600 text-xs font-medium">Alta</span>}
-                value={pct(stats.alta)}
+                label={<span className="px-2 py-0.5 rounded bg-red-light text-red text-xs font-medium">Alta</span>}
+                valor={`${pct(stats.alta)}%`}
+                porcentagem={pct(stats.alta)}
+                cor="var(--color-red)"
               />
               <ProgressBar
-                label={<span className="px-2 py-0.5 rounded bg-yellow-100 text-yellow-600 text-xs font-medium">Média</span>}
-                value={pct(stats.media)}
+                label={<span className="px-2 py-0.5 rounded bg-amber-light text-amber text-xs font-medium">Média</span>}
+                valor={`${pct(stats.media)}%`}
+                porcentagem={pct(stats.media)}
+                cor="var(--color-amber)"
               />
               <ProgressBar
-                label={<span className="px-2 py-0.5 rounded bg-green-100 text-green-600 text-xs font-medium">Baixa</span>}
-                value={pct(stats.baixa)}
+                label={<span className="px-2 py-0.5 rounded bg-green-light text-green text-xs font-medium">Baixa</span>}
+                valor={`${pct(stats.baixa)}%`}
+                porcentagem={pct(stats.baixa)}
+                cor="var(--color-green)"
               />
             </div>
           </div>
@@ -108,7 +114,7 @@ export default function Relatorio({ tarefas, usuarios, getEstatisticas }) {
             <div className="space-y-2 text-sm">
               <p>Taxa de conclusão: <strong>{pct(stats.concluidas)}%</strong></p>
               <p>Membros ativos: <strong>{usuarios.length}</strong></p>
-              <p className={stats.atrasadas > 0 ? "text-red-500" : ""}>
+              <p className={stats.atrasadas > 0 ? "text-red" : ""}>
                 Tarefas atrasadas: <strong>{stats.atrasadas}</strong>
               </p>
             </div>
@@ -120,9 +126,9 @@ export default function Relatorio({ tarefas, usuarios, getEstatisticas }) {
 
             <div className="space-y-3">
               {usuarios.map((user) => {
-                const tarefasUser = tarefas.filter(t => t.usuarioId === user.id)
+                const tarefasUser = tarefas.filter(t => t.responsavelId === user.id)
                 const total = tarefasUser.length
-                const concluidas = tarefasUser.filter(t => t.status === 'concluida').length
+                const concluidas = tarefasUser.filter(t => t.status === 'Concluído').length
                 const progresso = total ? Math.round((concluidas / total) * 100) : 0
 
                 return (
@@ -139,7 +145,7 @@ export default function Relatorio({ tarefas, usuarios, getEstatisticas }) {
                       </span>
                     </div>
 
-                    <ProgressBar value={progresso} />
+                    <ProgressBar porcentagem={progresso} valor={`${progresso}%`} />
                   </div>
                 )
               })}

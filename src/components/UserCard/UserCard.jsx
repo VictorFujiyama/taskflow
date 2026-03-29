@@ -2,7 +2,7 @@ import { iniciais } from '../../data/helpers'
 
 export default function UserCard({ usuario, tarefasDoUsuario = [], onEdit, onDelete }) {
   // Cálculo das tarefas concluídas
-  const concluidas = tarefasDoUsuario.filter(t => t.concluida || t.status === 'concluida').length;
+  const concluidas = tarefasDoUsuario.filter(t => t.status === 'Concluído').length;
 
   return (
     <div className="bg-surface border border-border rounded-2xl p-5 hover:shadow-lg transition-shadow">
@@ -40,7 +40,7 @@ export default function UserCard({ usuario, tarefasDoUsuario = [], onEdit, onDel
         </button>
         <button 
           onClick={() => onDelete(usuario.id)}
-          className="flex-1 py-1.5 text-xs font-medium text-red-500 border border-red-200 rounded-lg hover:bg-red-50 transition-colors"
+          className="flex-1 py-1.5 text-xs font-medium text-red border border-red/20 rounded-lg hover:bg-red-light transition-colors"
         >
           Remover
         </button>

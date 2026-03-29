@@ -70,11 +70,14 @@ export function useTaskFlow() {
     const altaPendente = tarefas.filter(
       (t) => t.prioridade === 'Alta' && t.status !== 'Concluído'
     ).length
+    const alta = tarefas.filter((t) => t.prioridade === 'Alta').length
+    const media = tarefas.filter((t) => t.prioridade === 'Média').length
+    const baixa = tarefas.filter((t) => t.prioridade === 'Baixa').length
     const atrasadas = tarefas.filter(
       (t) => t.prazo && new Date(t.prazo) < new Date() && t.status !== 'Concluído'
     ).length
 
-    return { total, concluidas, emAndamento, aFazer, altaPendente, atrasadas }
+    return { total, concluidas, emAndamento, aFazer, altaPendente, alta, media, baixa, atrasadas }
   }
 
   return {
